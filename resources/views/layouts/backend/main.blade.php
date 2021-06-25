@@ -11,32 +11,48 @@
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.css')}}">
 
     <link rel="stylesheet" href="{{asset('assets/vendors/iconly/bold.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/vendors/dripicons/webfont.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/pages/dripicons.css')}}">
 
     <link rel="stylesheet" href="{{asset('assets/vendors/perfect-scrollbar/perfect-scrollbar.css')}}">
     <link rel="stylesheet" href="{{asset('assets/vendors/bootstrap-icons/bootstrap-icons.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/app.css')}}">
     <link rel="shortcut icon" href="{{asset('assets/images/favicon.svg')}}" type="image/x-icon">
+    <style>
+        .com-text{
+    white-space: pre-wrap;
+      word-wrap: break-word;
+}
+    </style>
+    <script>
+function textKomen() {
+  const masuk = document.getElementById('text');
+  const detect = masuk.value.toUpperCase();
+  const btnSend = document.getElementById("kirimKomen");
+
+  if (detect.length < 1 || detect == null) {
+  btnSend.style.backgroundColor = "#d1d1d1";
+  btnSend.disabled=true;
+  }else{
+  btnSend.disabled=false;
+  btnSend.style.backgroundColor = "#5186ff";
+  }
+}
+</script> 
 </head>
 
 <body>
     <div id="app">
         @include('layouts.backend.partial.sidebar')
-        <div id="main">
-        <header class="mb-3">
-                <a href="#" class="burger-btn d-block d-xl-none">
-                    <i class="bi bi-justify fs-3"></i>
-                </a>
-            </header>
+        
+       
 
-            <div class="page-heading">
-                <h3>Dashboard</h3>
-            </div>
-            <div class="page-content">
+            <!-- <div class="page-content"> -->
                 @yield('content')
-            </div>
+            <!-- </div> -->
 
          <!-- footer -->
-        </div>
+       
     </div>
     <script src="{{asset('assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
     <script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
