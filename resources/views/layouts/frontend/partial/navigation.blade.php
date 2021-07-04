@@ -58,27 +58,16 @@
                                             <li><a href="contact.html">Contact</a></li>
                                             <li><a href="#">Pages</a>
                                                 <ul class="submenu">
-                                                    <li><a href="elements.html">Element</a></li>
-                                                    <li><a href="blog.html">Blog</a></li>
-                                                    <li><a href="single-blog.html">Blog Details</a></li>
-                                                    <li><a href="details.html">Categori Details</a></li>
+                                                    <li><a href="{{route('login')}}">Login</a></li>
+                                                    <li><a href="{{route('register')}}">Register</a></li>
+                                                    <li><a href="{{route('fe-berita.search')}}">Blog</a></li>
+                                                    <li><a href="{{route('fe-berita.kategori')}}">Categori Details</a></li>
                                                 </ul>
                                             </li>
                                         </ul>
                                     </nav>
                                 </div>
                             </div>             
-                            <div class="col-xl-2 col-lg-2 col-md-4">
-                                <div class="header-right-btn f-right d-none d-lg-block">
-                                    <i class="fas fa-search special-tag"></i>
-                                    <div class="search-box">
-                                        <form action="#">
-                                            <input type="text" placeholder="Search">
-                                            
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
                             <!-- Mobile Menu -->
                             <div class="col-12">
                                 <div class="mobile_menu d-block d-md-none"></div>

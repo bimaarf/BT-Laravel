@@ -70,6 +70,7 @@ Route::get('/dashboard/youtube/hapus/{id}', [YoutubeController::class, 'hapus'])
 
 // frontend
 Route::get('/', [BeritaController::class, 'index'])->name('fe-berita.index');
+Route::get('/search', [BeritaController::class, 'search'])->name('fe-berita.search');
 Route::get('/category', [BeritaController::class, 'kategori'])->name('fe-berita.kategori');
 Route::get('/lates-news', [BeritaController::class, 'latesNews'])->name('fe-berita.latesNews');
 Route::get('/trend/{id}{judul}', [BeritaController::class, 'view'])->name('berita.view');

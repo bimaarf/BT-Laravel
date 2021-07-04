@@ -55,6 +55,22 @@
                     </div>
                     <!-- Riht content -->
                     <div class="col-lg-5">
+                    <div class="blog_right_sidebar">
+                        <aside class="single_sidebar_widget search_widget">
+                            <form action="{{route('fe-berita.search')}}">
+                                <div class="form-group">
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" name="search" placeholder='Search Keyword'
+                                            onfocus="this.placeholder = ''"
+                                            onblur="this.placeholder = 'Search Keyword'">
+                                        <div class="input-group-append">
+                                            <button class="btns" type="submit"><i class="ti-search"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </aside>
+                    </div>
                     @foreach($beritaRight as $brt)
                         <div class="trand-right-single d-flex">
                             <div class="trand-right-img rounded thumb-post">
