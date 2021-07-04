@@ -1,81 +1,92 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
+
 use App\Models\Berita;
 use App\Models\Kategori;
+use App\Models\Trending;
+use App\Models\Youtube;
 use App\Models\User;
 
 class BeritaController extends Controller
 {
-    
-    public function formTambah()
+    public function index()
     {
-        $kategori = Kategori::all();
-        return view('admin.berita.form_tambah', compact('kategori'));
+        $whatNews = Berita::orderBy('id', 'DESC')->simplePaginate(4);
+        $kategori = Kategori::orderBy('id', 'DESC')->get();
+        $topTrendText = Trending::limit(3)->orderBy('id', 'DESC')->get();
+        $topTrend = Trending::limit(1)->orderBy('id', 'DESC')->get();
+        $botTrend = Trending::limit(3)->orderBy('id', 'DESC')->get();
+        $beritaRight = Berita::limit(5)->orderBy('id', 'DESC')->get();
+        $topNews = Trending::inRandomOrder()->limit(5)->orderBy('id', 'DESC')->get();
+        $youtubeBot = Youtube::orderBy('id', 'DESC')->get();
+        
+        return view('fe-berita.index', 
+        compact(
+            'whatNews',
+            'kategori',
+            'topTrend', 
+            'beritaRight', 
+            'topTrendText',
+            'botTrend',
+            'topNews',
+            'youtubeBot'
+        ));
     }
 
-    public function tambah(Request $request)
+    public function kategori()
     {
-        $target_directory = 'gambar';
-        $request->validate([
-            'cover_img'=>'mimes:png,jpg|max:1024',
-        ]);
-        $file = $request->file('cover_img');
-        $filename = time().'-'.$file->getClientOriginalName() ;
-        $request->cover_img->move(public_path('gambar'), $filename);
+        $kategori = Kategori::orderBy('id', 'DESC')->get();
+        $whatNews = Berita::orderBy('id', 'DESC')->cursorPaginate(4);
 
-        $berita = new Berita();
-        $berita->judul = $request->judul;
-        $berita->isi = $request->isi;
-        $berita->cover_img = $filename;
-        $berita->kategori_id = $request->kategori_id;
-        $berita->user_id = Auth::id();
-        $berita->save();
-
-        return redirect()->route('admin.berita.dashboard');
+        return view('fe-berita.kategori', compact('kategori', 'whatNews'));
     }
-    public function formUbah($id)
+    public function latesNews()
     {
-
-        $kategori = Kategori::all();
-        $berita = Berita::find($id);
-
-
-        return view('admin.berita.form_ubah', compact('kategori', 'berita'));
+        $topTrendText = Trending::limit(3)->orderBy('id', 'DESC')->get();
+        $topTrend = Trending::limit(1)->orderBy('id', 'DESC')->get();
+        $botTrend = Trending::limit(3)->orderBy('id', 'DESC')->get();
+        $topNews = Trending::inRandomOrder()->limit(5)->orderBy('id', 'DESC')->get();
+        return view('fe-berita.lates_news', compact(
+            'topTrend', 
+            'botTrend',
+            'topTrendText',
+            'topNews'
+        ));
     }
 
-    public function ubah(Request $request, $id)
+    public function view($id)
     {
-        $berita = Berita::find($id);
-        $berita->judul = $request->judul;
-        $berita->isi = $request->isi;
-        $cover_img = $request->file('cover_img');
-        $berita->kategori_id = $request->kategori_id;
-        $berita->user_id = Auth::id();
-        $filename = time().'-'.$cover_img->getClientOriginalName() ;
-        $berita->cover_img = $filename;
-        $request->validate([
-            'cover_img'=>'mimes:png,jpg|max:1024',
-        ]);
-        $request->cover_img->move(public_path('gambar'), $filename);
+        $topTrend = Trending::find($id);
+        $topTrendText = Trending::limit(3)->orderBy('id', 'DESC')->get();
+        $topNews = Trending::inRandomOrder()->limit(4)->orderBy('id', 'DESC')->get();
+        $beritaRight = Berita::limit(5)->orderBy('id', 'DESC')->get();
 
-        $berita->save();
-        return redirect()->route('admin.berita.dashboard', ['id' => $berita->id]);
+        return view('fe-berita.view', compact( 
+            'topTrend', 
+            'beritaRight',
+            'topNews',
+            'topTrendText'
+
+        ));
     }
-
-    public function detail($id)
+    public function views($id)
     {
-        $berita = Berita::find($id);
-        return view('admin.berita.detail', compact('berita'));
-    }
+        $topTrend = Trending::find($id);
+        $topTrendText = Trending::limit(3)->orderBy('id', 'DESC')->get();
+        $topNews = Trending::inRandomOrder()->limit(4)->orderBy('id', 'DESC')->get();
+        $beritaRight = Berita::find($id);
+        return view('fe-berita.views', compact( 
+            'topTrend',
+            'beritaRight',
+            'topNews',
+            'topTrendText'
 
-    public function hapus($id)
-    {
-        $berita = Berita::find($id);
-        $berita->delete();
-        return redirect()->route('admin.berita.dashboard');
-    }
+        ));
 
+    }
 }
