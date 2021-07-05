@@ -110,7 +110,7 @@
                                 </div>
                                 <div class="weekly2-caption">
                                     <span class="color1">{{$brt->berita->kategori->nama_kategori}}</span>
-                                    <p>{{$brt->updated_at}}</p>
+                                    <p>{{$brt->berita->created_at}}</p>
                                     <h4><a href="{{route('berita.view',['id'=>$brt->id, 'judul'=>$brt->berita->judul])}}">{{substr($brt->berita->judul, 0, 50)}}...</a></h4>
                                 </div>
                             </div> 
@@ -263,7 +263,7 @@
                                 </div>
                                 <div class="weekly2-caption">
                                     <span class="color1">{{$brt->berita->kategori->nama_kategori}}</span>
-                                    <p>{{$brt->updated_at}}</p>
+                                    <p>{{$brt->berita->created_at}}</p>
                                     <h4><a href="{{route('berita.view',['id'=>$brt->id, 'judul'=>$brt->berita->judul])}}">{{substr($brt->berita->judul, 0, 50)}}...</a></h4>
                                 </div>
                             </div> 

@@ -5,7 +5,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
-
 use App\Models\Berita;
 use App\Models\Kategori;
 use App\Models\Trending;
