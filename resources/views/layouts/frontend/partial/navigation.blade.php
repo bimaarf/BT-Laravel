@@ -8,15 +8,14 @@
                             <div class="row d-flex justify-content-between align-items-center">
                                 <div class="header-info-left">
                                     <ul>     
-                                        <li><img src="{{asset('frontend/assets/img/icon/header_icon1.png')}}" alt="">34ºc, Sunny </li>
-                                        <li><img src="{{asset('frontend/assets/img/icon/header_icon1.png')}}" alt="">Tuesday, 18th June, 2019</li>
+                                        <li><a href="{{route('login')}}"><i class="fa fa-user"> </i> Login</a> </li>
+                                        <li><a href="{{route('register')}}"><i class="fa fa-user"> </i> Register</a> </li>
                                     </ul>
                                 </div>
                                 <div class="header-info-right">
                                     <ul class="header-social">    
-                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                       <li> <a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                                        <li><a href="https://twitter.com/Eunachii"><i class="fab fa-twitter"></i></a></li>
+                                        <li><a href="https://instagram.com/bima_arifa"><i class="fab fa-instagram"></i></a></li>
                                     </ul>
                                 </div>
                             </div>

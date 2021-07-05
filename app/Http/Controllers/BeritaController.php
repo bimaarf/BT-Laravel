@@ -23,9 +23,9 @@ class BeritaController extends Controller
 
         }
         $totalBerita = Berita::count();
-        
+        $beritaRight = Berita::limit(5)->orderBy('id', 'DESC')->get();
         $kategori = Kategori::orderBy('id', 'DESC')->get();
-        return view('fe-berita.search', compact('berita','kategori', 'totalBerita'));
+        return view('fe-berita.search', compact('berita','kategori', 'totalBerita', 'beritaRight'));
     }
     public function index(Request $request)
     {
