@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\Berita;
 use App\Models\Kategori;
 use App\Models\Trending;
-use App\Models\Youtube;
+use App\Models\Kontak;
 use App\Models\User;
 
 class AdminController extends Controller
@@ -35,6 +35,37 @@ class AdminController extends Controller
     {
         $youtube = Youtube::orderBy('id', 'DESC')->simplePaginate(10);
         return view('admin.youtube.dashboard', compact('youtube'));
+    }
+    
+    public function indexKontak()
+    {
+        $kontak = Kontak::orderBy('id', 'DESC')->simplePaginate(10);
+
+        return view('admin.kontak.dashboard', compact('kontak'));
+    }
+
+    public function tambahKontak(Request $request)
+    {
+        $kontak = new Kontak();
+        $kontak->username = $request->username;
+        $kontak->email = $request->email;
+        $kontak->subject = $request->subject;
+        $kontak->message = $request->message;
+        $kontak->save();
+        return redirect()->route('fe-berita.index');
+    }
+
+    public function detailKontak($id)
+    {
+        $kontak = Kontak::find($id);
+        return view('admin.kontak.detail', compact('kontak'));
+    }
+
+    public function hapusKontak($id)
+    {
+        $kontak = Kontak::find($id);
+        $kontak->delete();
+        return redirect()->route('admin.kontak.dashboard');
     }
     
 }

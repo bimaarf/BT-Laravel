@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Berita;
 use App\Models\Kategori;
 use App\Models\User;
+use App\Models\Trending;
+use App\Models\Kontak;
 
 class SiteController extends Controller
 {
@@ -18,6 +20,8 @@ class SiteController extends Controller
         $totalBerita = Berita::count();
         $totalKategori = Kategori::count();
         $totalUser = User::count();
-        return view('dashboard',compact('totalBerita', 'totalKategori', 'totalUser')); //lokasi file resource/view/beranda.php
+        $totalKontak = Kontak::count();
+        $totalTrend = Trending::count();
+        return view('dashboard',compact('totalBerita', 'totalKategori', 'totalUser', 'totalKontak', 'totalTrend')); //lokasi file resource/view/beranda.php
     }
 }

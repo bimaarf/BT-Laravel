@@ -9,8 +9,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Berita;
 use App\Models\Kategori;
 use App\Models\Trending;
-use App\Models\Youtube;
 use App\Models\User;
+use App\Models\Kontak;
 
 class BeritaController extends Controller
 {
@@ -41,7 +41,6 @@ class BeritaController extends Controller
         $topTrend = Trending::limit(1)->orderBy('id', 'DESC')->get();
         $botTrend = Trending::limit(3)->orderBy('id', 'DESC')->get();
         $topNews = Trending::inRandomOrder()->limit(5)->orderBy('id', 'DESC')->get();
-        $youtubeBot = Youtube::orderBy('id', 'DESC')->get();
         
         return view('fe-berita.index', 
         compact(
@@ -51,8 +50,7 @@ class BeritaController extends Controller
             'beritaRight', 
             'topTrendText',
             'botTrend',
-            'topNews',
-            'youtubeBot'
+            'topNews'
         ));
     }
 
@@ -63,6 +61,12 @@ class BeritaController extends Controller
 
         return view('fe-berita.kategori', compact('kategori', 'whatNews'));
     }
+
+    public function kontak()
+    {
+        return view('fe-berita.kontak');
+    }
+
     public function latesNews()
     {
         $topTrendText = Trending::limit(3)->orderBy('id', 'DESC')->get();

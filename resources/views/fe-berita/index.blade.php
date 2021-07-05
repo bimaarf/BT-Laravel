@@ -74,7 +74,7 @@
                     @foreach($beritaRight as $brt)
                         <div class="trand-right-single d-flex">
                             <div class="trand-right-img rounded thumb-post">
-                                <img src="{{asset('gambar/'.$brt->cover_img)}}" width="250" height="200"  alt="right" >
+                                <img src="{{asset('gambar/'.$brt->cover_img)}}" width="150" height="100"  alt="right" >
                             </div>
                             <div class="trand-right-cap">
                                 <span class="color1">{{$brt->kategori->nama_kategori}}</span>
@@ -214,42 +214,22 @@
                 <!-- Flow Socail -->
                 <div class="single-follow mb-45">
                     <div class="single-box">
-                        <div class="follow-us d-flex align-items-center">
-                            <div class="follow-social">
-                                <a href="#"><img src="{{asset('frontend/assets/img/news/icon-fb.png')}}" alt=""></a>
-                            </div>
-                            <div class="follow-count">  
-                                <span>8,045</span>
-                                <p>Fans</p>
-                            </div>
-                        </div> 
-                        <div class="follow-us d-flex align-items-center">
-                            <div class="follow-social">
-                                <a href="#"><img src="{{asset('frontend/assets/img/news/icon-tw.png')}}" alt=""></a>
-                            </div>
-                            <div class="follow-count">
-                                <span>8,045</span>
-                                <p>Fans</p>
-                            </div>
-                        </div>
-                            <div class="follow-us d-flex align-items-center">
-                            <div class="follow-social">
-                                <a href="#"><img src="{{asset('frontend/assets/img/news/icon-ins.png')}}" alt=""></a>
-                            </div>
-                            <div class="follow-count">
-                                <span>8,045</span>
-                                <p>Fans</p>
-                            </div>
-                        </div>
-                        <div class="follow-us d-flex align-items-center">
-                            <div class="follow-social">
-                                <a href="#"><img src="{{asset('frontend/assets/img/news/icon-yo.png')}}" alt=""></a>
-                            </div>
-                            <div class="follow-count">
-                                <span>8,045</span>
-                                <p>Fans</p>
-                            </div>
-                        </div>
+                    <div class="follow-us d-flex align-items-center">
+                                        <div class="follow-social">
+                                            <a href="https://twitter.com/Eunachii"><img src="{{asset('frontend/assets/img/news/icon-tw.png')}}" alt=""></a>
+                                        </div>
+                                        <div class="follow-count">
+                                            <span>@Eunachii</span>
+                                        </div>
+                                    </div>
+                                        <div class="follow-us d-flex align-items-center">
+                                        <div class="follow-social">
+                                            <a href="https://instagram.com/bima_arifa"><img src="{{asset('frontend/assets/img/news/icon-ins.png')}}" alt=""></a>
+                                        </div>
+                                        <div class="follow-count">
+                                            <span>@bima_arifa</span>
+                                        </div>
+                                    </div>
                     </div>
                 </div>
                 <!-- New Poster -->

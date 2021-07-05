@@ -39,12 +39,12 @@
                       <i class="far fa-comment-alt text-warning fa-3x me-4"></i>
                     </div>
                     <div>
-                      <h4>Total Comments</h4>
-                      <p class="mb-0">Monthly blog posts</p>
+                      <h4>Message</h4>
+                      <p class="mb-0">User Contact</p>
                     </div>
                   </div>
                   <div class="align-self-center">
-                    <h2 class="h1 mb-0">84,695</h2>
+                    <h2 class="h1 mb-0">{{$totalKontak}}</h2>
                   </div>
                 </div>
               </div>
@@ -57,8 +57,8 @@
               <div class="card-body">
                 <div class="d-flex justify-content-between px-md-1">
                   <div>
-                    <h3 class="text-danger">{{$totalKategori}}</h3>
-                    <p class="mb-0">Total Kategori</p>
+                    <h3 class="text-danger">{{$totalTrend}}</h3>
+                    <p class="mb-0">Trending</p>
                   </div>
                   <div class="align-self-center">
                     <i class="fas fa-rocket text-danger fa-3x"></i>
@@ -73,7 +73,7 @@
                 <div class="d-flex justify-content-between px-md-1">
                   <div>
                     <h3 class="text-success">{{$totalUser}}</h3>
-                    <p class="mb-0">Total Users</p>
+                    <p class="mb-0">Users</p>
                   </div>
                   <div class="align-self-center">
                     <i class="far fa-user text-success fa-3x"></i>
@@ -88,10 +88,10 @@
                 <div class="d-flex justify-content-between p-md-1">
                   <div class="d-flex flex-row">
                     <div class="align-self-center">
-                      <h2 class="h1 mb-0 me-4">$36,000.00</h2>
+                      <h2 class="h1 mb-0 me-4">{{$totalKategori}}</h2>
                     </div>
                     <div>
-                      <h4>Total Cost</h4>
+                      <h4>Kategori</h4>
                       <p class="mb-0">Monthly Cost</p>
                     </div>
                   </div>

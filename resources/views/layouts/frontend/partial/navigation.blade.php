@@ -54,7 +54,7 @@
                                             <li><a href="{{route('fe-berita.index')}}">Home</a></li>
                                             <li><a href="{{route('fe-berita.kategori')}}">Category</a></li>
                                             <li><a href="{{route('fe-berita.latesNews')}}">Latest News</a></li>
-                                            <li><a href="contact.html">Contact</a></li>
+                                            <li><a href="{{route('fe-berita.kontak')}}">Contact</a></li>
                                             <li><a href="#">Pages</a>
                                                 <ul class="submenu">
                                                     <li><a href="{{route('login')}}">Login</a></li>

@@ -44,17 +44,12 @@
                   <i class="fas fa-chart-line fa-fw me-3"></i>
                       </span>Tambah Trending</span></a>
 
-              <span class="sidebar-title list-group-item list-group-item-action py-2 ripple">Form &amp; Youtube</span>
+              <span class="sidebar-title list-group-item list-group-item-action py-2 ripple">Form &amp; Kontak</span>
 
-              <a href="{{route('admin.youtube.dashboard')}}" class="list-group-item list-group-item-action py-2 ripple">
+              <a href="{{route('admin.kontak.dashboard')}}" class="list-group-item list-group-item-action py-2 ripple">
                     <i class="fas fa-chart-pie fa-fw me-3"></i>
-                    </span>Daftar Youtube</span></a>
+                    </span>Daftar Kontak</span></a>
 
-                  <a href="{{route('admin.youtube.formTambah')}}" class="list-group-item list-group-item-action py-2 ripple">
-                  <i class="fas fa-chart-line fa-fw me-3"></i>
-                      </span>Tambah Url</span></a>
-
-          
         </div>
       </div>
     </nav>

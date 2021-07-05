@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateYoutubeTable extends Migration
+class CreateKontakTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateYoutubeTable extends Migration
      */
     public function up()
     {
-        Schema::create('youtube', function (Blueprint $table) {
+        Schema::create('kontak', function (Blueprint $table) {
             $table->id();
-            $table->string('key', 50)->unique();
-            $table->string('judul', 100);
-            $table->string('link', 255);
+            $table->string('username', 50);
+            $table->string('email', 40);
+            $table->text('subject');
+            $table->string('message');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreateYoutubeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('youtube');
+        Schema::dropIfExists('kontak');
     }
 }
