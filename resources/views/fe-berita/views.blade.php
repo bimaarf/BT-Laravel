@@ -40,9 +40,6 @@
                                 <div class="section-tittle mb-30 pt-30">
                                     <h3>{{$beritaRight->judul}}</h3>
                                 </div>
-                                <div class="about-prea">
-                                    <p class="about-pera1 mb-25 tx-w-space"><b>CORETANMAHASISWA.COM - </b> {{$beritaRight->isi}}</p>
-                                </div> 
                                 <div class="section-tittle trending-bottom single-bottom mb-35">
                                     <div class=" card-header border-0"><b>Baca Juga</b>
                                     
@@ -55,6 +52,10 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="about-prea">
+                                    <p class="about-pera1 mb-25 tx-w-space"><b>CORETANMAHASISWA.COM - </b> {{$beritaRight->isi}}</p>
+                                </div> 
+                                
                                 <div class="about-prea">
                                     <p class="about-pera1 mb-25"></p>
                                 </div>

@@ -17,6 +17,7 @@ class BeritaController extends Controller
     {
         if($request->has('search')){
             $berita = Berita::where('judul', 'LIKE', '%'.$request->search. '%')->get();
+            $berita = Berita::where('isi', 'LIKE', '%'.$request->search. '%')->get();
         }else{
             $berita = Berita::limit(5)->orderBy('id', 'DESC')->get();
 
@@ -30,6 +31,7 @@ class BeritaController extends Controller
     {
         if($request->has('search')){
             $beritaRight = Berita::where('judul', 'LIKE', '%'.$request->search. '%')->get();
+            $beritaRight = Berita::where('isi', 'LIKE', '%'.$request->search. '%')->get();
         }else{
             $beritaRight = Berita::limit(5)->orderBy('id', 'DESC')->get();
 

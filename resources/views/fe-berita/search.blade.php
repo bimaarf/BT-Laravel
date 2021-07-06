@@ -95,7 +95,7 @@
                             <div class="media post_item">
                                 <img src="{{asset('gambar/'. $brt->cover_img)}}" width="180" alt="post">
                                 <div class="media-body">
-                                    <a href="single-blog.html">
+                                    <a href="{{route('berita.views',['id'=>$brt->id, 'judul'=>$brt->judul])}}">
                                         <h3>{{substr($brt->judul, 0 , 30)}}...</h3>
                                     </a>
                                     <p>{{$brt->craeted_at}}</p>
