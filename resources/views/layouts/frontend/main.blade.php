@@ -3,11 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>LOCALZONE | The Most Engaging Media for Millennials and Gen-Z</title>
+        <title>Coretan Mahasiswa | The Most Engaging Media for Millennials and Gen-Z</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="manifest" href="site.webmanifest">
-        <link rel="icon" href="{{asset('assets/icon/localzone.png')}}" type="image/x-icon">
+        <link rel="icon" href="{{asset('frontend/assets/img/logo/CM-150.png')}}" type="image/x-icon">
 
 
 		<!-- CSS here -->

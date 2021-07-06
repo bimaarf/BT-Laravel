@@ -69,7 +69,12 @@
         <a class="navbar-brand" href="#">
           <img src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png" height="25" alt="" loading="lazy" />
         </a>
-        
+        <!-- Search form -->
+        <form class="d-none d-md-flex input-group w-auto my-auto" method="GET" action="{{route('admin.berita.dashboard')}}">
+          <input autocomplete="off" type="search" class="form-control rounded"
+            placeholder='Search (ctrl + "/" to focus)' style="min-width: 225px" />
+          <span class="input-group-text border-0"><i class="fas fa-search"></i></span>
+        </form>
 
         <!-- Right links -->
         <ul class="navbar-nav ms-auto d-flex flex-row">

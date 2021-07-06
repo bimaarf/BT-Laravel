@@ -1,5 +1,16 @@
 @extends('layouts.frontend.main')
 @section('content')
+<div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="{{asset('frontend/assets/img/logo/cm-150.png')}}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- load -->
 <section class="whats-news-area pt-50 pb-20">
     <div class="container">
         <div class="row">
@@ -93,38 +104,19 @@
                     <div class="single-box">
                         <div class="follow-us d-flex align-items-center">
                             <div class="follow-social">
-                                <a href="#"><img src="{{asset('frontend/assets/img/news/icon-fb.png')}}" alt=""></a>
-                            </div>
-                            <div class="follow-count">  
-                                <span>8,045</span>
-                                <p>Fans</p>
-                            </div>
-                        </div> 
-                        <div class="follow-us d-flex align-items-center">
-                            <div class="follow-social">
-                                <a href="#"><img src="{{asset('frontend/assets/img/news/icon-tw.png')}}" alt=""></a>
+                                <a href="https://twitter.com/Eunachii"><img src="{{asset('frontend/assets/img/news/icon-tw.png')}}" alt=""></a>
                             </div>
                             <div class="follow-count">
-                                <span>8,045</span>
-                                <p>Fans</p>
-                            </div>
-                        </div>
-                            <div class="follow-us d-flex align-items-center">
-                            <div class="follow-social">
-                                <a href="#"><img src="{{asset('frontend/assets/img/news/icon-ins.png')}}" alt=""></a>
-                            </div>
-                            <div class="follow-count">
-                                <span>8,045</span>
-                                <p>Fans</p>
+                                <span>@Eunachii</span>
                             </div>
                         </div>
                         <div class="follow-us d-flex align-items-center">
                             <div class="follow-social">
-                                <a href="#"><img src="{{asset('frontend/assets/img/news/icon-yo.png')}}" alt=""></a>
+                                <a href="https://instagram.com/bima_arifa"><img src="{{asset('frontend/assets/img/news/icon-ins.png')}}" alt=""></a>
                             </div>
                             <div class="follow-count">
-                                <span>8,045</span>
-                                <p>Fans</p>
+                                <span>@bima_arifa</span>
+                                        </div>
                             </div>
                         </div>
                     </div>

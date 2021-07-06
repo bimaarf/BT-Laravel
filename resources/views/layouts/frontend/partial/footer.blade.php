@@ -8,7 +8,7 @@
                             <div class="single-footer-caption">
                                 <!-- logo -->
                                 <div class="footer-logo">
-                                    <a href="index.html"><img src="{{asset('frontend/assets/img/logo/lz-logo.png')}}" alt=""></a>
+                                    <a href="index.html"><img src="{{asset('frontend/assets/img/logo/coretanmahasiswa-235.png')}}" alt=""></a>
                                 </div>
                                 <div class="footer-tittle">
                                     <div class="footer-pera">

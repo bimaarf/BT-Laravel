@@ -5,11 +5,12 @@
             <div class="preloader-inner position-relative">
                 <div class="preloader-circle"></div>
                 <div class="preloader-img pere-text">
-                    <img src="{{asset('frontend/assets/img/logo/localzone.png')}}" alt="">
+                    <img src="{{asset('frontend/assets/img/logo/cm-150.png')}}" alt="">
                 </div>
             </div>
         </div>
     </div>
+    <!-- load -->
 <div class="about-area">
             <div class="container">
                     <!-- Hot Aimated News Tittle-->
@@ -40,7 +41,7 @@
                                     <h3>{{$beritaRight->judul}}</h3>
                                 </div>
                                 <div class="about-prea">
-                                    <p class="about-pera1 mb-25 tx-w-space"><b>LOCALZONE.ID - </b> {{$beritaRight->isi}}</p>
+                                    <p class="about-pera1 mb-25 tx-w-space"><b>CORETANMAHASISWA.COM - </b> {{$beritaRight->isi}}</p>
                                 </div> 
                                 <div class="section-tittle trending-bottom single-bottom mb-35">
                                     <div class=" card-header border-0"><b>Baca Juga</b>
