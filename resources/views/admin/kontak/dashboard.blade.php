@@ -1,4 +1,5 @@
 @extends('layouts.backend.main')
+@section('dashboard.kontak', 'active')
 @section('content')
     <section class="mb-4">
     <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
@@ -11,8 +12,8 @@
         </button>
 
         <!-- Brand -->
-        <a class="navbar-brand" href="#">
-          <img src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png" height="25" alt="" loading="lazy" />
+        <a class="navbar-brand" href="{{route('fe-berita.index')}}">
+          <img src="{{asset('frontend/assets/img/logo/coretanmahasiswa-150.png')}}" height="25" alt="" loading="lazy" />
         </a>
 
         <!-- Search form -->

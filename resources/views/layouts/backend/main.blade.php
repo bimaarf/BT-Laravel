@@ -5,8 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
-  <title>Local Zone | Dashboard</title>
-  <link rel="icon" href="{{asset('assets/icon/localzone.png')}}" type="image/x-icon">
+  <title>Coretan Mahasiswa | Dashboard</title>
+  <link rel="icon" href="{{asset('frontend/assets/img/logo/cm-150.png')}}" type="image/x-icon">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
   <!-- Google Fonts Roboto -->

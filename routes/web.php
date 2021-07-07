@@ -34,37 +34,37 @@ use App\Models\Kontak;
 require __DIR__.'/auth.php';
 
 // berita
-Route::get('/dashboard', [SiteController::class,'dashboard'])->name('dashboard')->middleware('auth');
-Route::get('/dashboard/berita', [AdminController::class,'indexBerita'])->name('admin.berita.dashboard')->middleware('auth');
-Route::get('/dashboard/berita/form-tambah', [AdminBeritaController::class, 'formTambah'])->name('admin.berita.formTambah')->middleware('auth');
+Route::get('/dashboard', [SiteController::class,'dashboard'])->name('dashboard')->middleware(['auth', 'role:user|admin|owner']);
+Route::get('/dashboard/berita', [AdminController::class,'indexBerita'])->name('admin.berita.dashboard')->middleware(['auth', 'role:admin|owner']);
+Route::get('/dashboard/berita/form-tambah', [AdminBeritaController::class, 'formTambah'])->name('admin.berita.formTambah')->middleware(['auth', 'role:admin|owner']);
 Route::post('/dashboard/berita/tambah', [AdminBeritaController::class, 'tambah'])->name('admin.berita.tambah')->middleware('auth');
-Route::get('/dashboard/berita/formubah/{id}{key}', [AdminBeritaController::class, 'formUbah'])->name('admin.berita.formUbah')->middleware('auth');
+Route::get('/dashboard/berita/formubah/{id}{key}', [AdminBeritaController::class, 'formUbah'])->name('admin.berita.formUbah')->middleware(['auth', 'role:admin|owner']);
 Route::post('/dashboard/berita/ubah/{id}', [AdminBeritaController::class, 'ubah'])->name('admin.berita.ubah')->middleware('auth');
-Route::get('/dashboard/berita/view/{id}{key}', [AdminBeritaController::class, 'detail'])->name('admin.berita.detail')->middleware('auth');
-Route::get('/dashboard/berita/hapus/{id}', [AdminBeritaController::class, 'hapus'])->name('admin.berita.hapus')->middleware('auth');
+Route::get('/dashboard/berita/view/{id}{key}', [AdminBeritaController::class, 'detail'])->name('admin.berita.detail')->middleware(['auth', 'role:admin|owner']);
+Route::get('/dashboard/berita/hapus/{id}', [AdminBeritaController::class, 'hapus'])->name('admin.berita.hapus')->middleware(['auth', 'role:owner']);
 
 // kategori
-Route::get('/dashboard/kategori', [AdminController::class, 'indexKategori'])->name('admin.kategori.dashboard')->middleware('auth');
-Route::get('/dashboard/kategori/formtambah', [AdminKategoriController::class, 'formTambah'])->name('admin.kategori.formTambah')->middleware('auth');
-Route::get('/dashboard/kategori/formubah/{id}{key}', [AdminKategoriController::class, 'formUbah'])->name('admin.kategori.formUbah')->middleware('auth');
+Route::get('/dashboard/kategori', [AdminController::class, 'indexKategori'])->name('admin.kategori.dashboard')->middleware(['auth', 'role:admin|owner']);
+Route::get('/dashboard/kategori/formtambah', [AdminKategoriController::class, 'formTambah'])->name('admin.kategori.formTambah')->middleware(['auth', 'role:admin|owner']);
+Route::get('/dashboard/kategori/formubah/{id}{key}', [AdminKategoriController::class, 'formUbah'])->name('admin.kategori.formUbah')->middleware(['auth', 'role:admin|owner']);
 Route::post('/dashboard/kategori/tambah', [AdminKategoriController::class, 'tambah'])->name('admin.kategori.tambah')->middleware('auth');
 Route::post('/dashboard/kategori/ubah/{id}', [AdminKategoriController::class, 'ubah'])->name('admin.kategori.ubah')->middleware('auth');
-Route::get('/dashboard/kategori/view/{id}{key}', [AdminKategoriController::class, 'detail'])->name('admin.kategori.detail')->middleware('auth');
-Route::get('/dashboard/kategori/hapus/{id}', [AdminKategoriController::class, 'hapus'])->name('admin.kategori.hapus')->middleware('auth');
+Route::get('/dashboard/kategori/view/{id}{key}', [AdminKategoriController::class, 'detail'])->name('admin.kategori.detail')->middleware(['auth', 'role:admin|owner']);
+Route::get('/dashboard/kategori/hapus/{id}', [AdminKategoriController::class, 'hapus'])->name('admin.kategori.hapus')->middleware(['auth', 'role:owner']);
 
 // trending
-Route::get('/dashboard/trending', [AdminController::class, 'indexTrending'])->name('admin.trending.dashboard')->middleware('auth');
-Route::get('/dashboard/trending/form-tambah', [TrendingController::class, 'formTambah'])->name('admin.trending.formTambah')->middleware('auth');
+Route::get('/dashboard/trending', [AdminController::class, 'indexTrending'])->name('admin.trending.dashboard')->middleware(['auth', 'role:admin|owner']);
+Route::get('/dashboard/trending/form-tambah', [TrendingController::class, 'formTambah'])->name('admin.trending.formTambah')->middleware(['auth', 'role:admin|owner']);
 Route::post('/dashboard/trending/tambah', [TrendingController::class, 'tambah'])->name('admin.trending.tambah')->middleware('auth');
-Route::get('/dashboard/trending/formubah/{id}{key}', [TrendingController::class, 'formUbah'])->name('admin.trending.formUbah')->middleware('auth');
+Route::get('/dashboard/trending/formubah/{id}{key}', [TrendingController::class, 'formUbah'])->name('admin.trending.formUbah')->middleware(['auth', 'role:admin|owner']);
 Route::post('/dashboard/trending/ubah/{id}', [TrendingController::class, 'ubah'])->name('admin.trending.ubah')->middleware('auth');
-Route::get('/dashboard/trending/hapus/{id}', [TrendingController::class, 'hapus'])->name('admin.trending.hapus')->middleware('auth');
+Route::get('/dashboard/trending/hapus/{id}', [TrendingController::class, 'hapus'])->name('admin.trending.hapus')->middleware(['auth', 'role:admin|owner']);
 
 // Kontak
-Route::get('/dashboard/kontak', [AdminController::class, 'indexKontak'])->name('admin.kontak.dashboard')->middleware('auth');
-Route::post('/kontak/tambah', [KontakController::class, 'tambah'])->name('kontak.tambah');
-Route::get('/dashboard/kontak/view/{id}', [KontakController::class, 'detail'])->name('admin.kontak.detail')->middleware('auth');
-Route::get('/kontak/hapus/{id}', [KontakController::class, 'hapus'])->name('admin.kontak.hapus')->middleware('auth');
+Route::get('/dashboard/kontak', [AdminController::class, 'indexKontak'])->name('admin.kontak.dashboard')->middleware(['auth', 'role:admin|owner']);
+Route::post('/kontak/tambah', [KontakController::class, 'tambah'])->name('kontak.tambah')->middleware(['auth', 'role:admin|owner']);
+Route::get('/dashboard/kontak/view/{id}', [KontakController::class, 'detail'])->name('admin.kontak.detail')->middleware(['auth', 'role:admin|owner']);
+Route::get('/kontak/hapus/{id}', [KontakController::class, 'hapus'])->name('admin.kontak.hapus')->middleware(['auth', 'role:admin|owner']);
 
 
 // frontend

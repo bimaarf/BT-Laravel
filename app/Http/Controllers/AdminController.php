@@ -46,6 +46,7 @@ class AdminController extends Controller
         if($request->has('search')){
             $kontak = Kontak::where('username', 'LIKE', '%'.$request->search. '%')->simplePaginate(10);
             $kontak = Kontak::where('email', 'LIKE', '%'.$request->search. '%')->simplePaginate(10);
+            $kontak = Kontak::where('subject', 'LIKE', '%'.$request->search. '%')->simplePaginate(10);
         }else{
             $kontak = Kontak::orderBy('id', 'DESC')->simplePaginate(10);
         }

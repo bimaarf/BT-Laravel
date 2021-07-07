@@ -1,4 +1,5 @@
 @extends('layouts.backend.main')
+@section('trending.formTambah', 'active')
 @section('content')
     <section class="mb-4">
         <div class="card">

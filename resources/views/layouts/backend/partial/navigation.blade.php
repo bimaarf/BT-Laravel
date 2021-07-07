@@ -4,7 +4,7 @@
     <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
       <div class="position-sticky">
         <div class="list-group list-group-flush mx-3 mt-4">
-          <a href="{{route('dashboard')}}" class="list-group-item list-group-item-action py-2 ripple active" aria-current="true">
+          <a href="{{route('dashboard')}}" class="list-group-item list-group-item-action py-2 ripple  @yield('dashboard')" aria-current="true">
             <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Dashboard</span>
           </a>
           <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
@@ -13,11 +13,11 @@
 
               <span class="sidebar-title list-group-item list-group-item-action py-2 ripple">Form &amp; Berita</span>
 
-                  <a href="{{route('admin.berita.dashboard')}}" class="list-group-item list-group-item-action py-2 ripple">
+                  <a href="{{route('admin.berita.dashboard')}}" class="list-group-item list-group-item-action py-2 ripple @yield('berita.dashboard')">
                   <i class="fas fa-globe fa-fw me-3"></i>
 
                   <span>Daftar Berita</span></a>
-                  <a href="{{route('admin.berita.formTambah')}}" class="list-group-item list-group-item-action py-2 ripple">
+                  <a href="{{route('admin.berita.formTambah')}}" class="list-group-item list-group-item-action py-2 ripple @yield('berita.formTambah')">
                   <i class="fas fa-chart-line fa-fw me-3"></i>
                       <span>Tambah Berita</span></a>
                       
@@ -25,28 +25,28 @@
 
               <span class="sidebar-title list-group-item list-group-item-action py-2 ripple">Form &amp; Kategori</span>
           
-                  <a href="{{route('admin.kategori.dashboard')}}" class="list-group-item list-group-item-action py-2 ripple">
+                  <a href="{{route('admin.kategori.dashboard')}}" class="list-group-item list-group-item-action py-2 ripple @yield('kategori.dashboard')">
                   <i class="fas fa-chart-bar fa-fw me-3"></i>
                       <span>Daftar Kategori</span></a>
 
-                  <a href="{{route('admin.kategori.formTambah')}}" class="list-group-item list-group-item-action py-2 ripple">
+                  <a href="{{route('admin.kategori.formTambah')}}" class="list-group-item list-group-item-action py-2 ripple @yield('kategori.formTambah')">
                   <i class="fas fa-chart-line fa-fw me-3"></i>
                       <span>Tambah Kategori</span></a>
 
 
               <span class="sidebar-title list-group-item list-group-item-action py-2 ripple">Form &amp; Trand</span>
 
-                  <a href="{{route('admin.trending.dashboard')}}" class="list-group-item list-group-item-action py-2 ripple">
+                  <a href="{{route('admin.trending.dashboard')}}" class="list-group-item list-group-item-action py-2 ripple @yield('dashboard.trending')">
                     <i class="fas fa-chart-pie fa-fw me-3"></i>
                     </span>Daftar Trending</span></a>
 
-                  <a href="{{route('admin.trending.formTambah')}}" class="list-group-item list-group-item-action py-2 ripple">
+                  <a href="{{route('admin.trending.formTambah')}}" class="list-group-item list-group-item-action py-2 ripple @yield('trending.formTambah')">
                   <i class="fas fa-chart-line fa-fw me-3"></i>
                       </span>Tambah Trending</span></a>
 
               <span class="sidebar-title list-group-item list-group-item-action py-2 ripple">Form &amp; Kontak</span>
 
-              <a href="{{route('admin.kontak.dashboard')}}" class="list-group-item list-group-item-action py-2 ripple">
+              <a href="{{route('admin.kontak.dashboard')}}" class="list-group-item list-group-item-action py-2 ripple @yield('dashboard.kontak')">
                     <i class="fas fa-chart-pie fa-fw me-3"></i>
                     </span>Daftar Kontak</span></a>
 
@@ -66,16 +66,9 @@
         </button>
 
         <!-- Brand -->
-        <a class="navbar-brand" href="#">
-          <img src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png" height="25" alt="" loading="lazy" />
+        <a class="navbar-brand" href="{{route('fe-berita.index')}}">
+          <img src="{{asset('frontend/assets/img/logo/coretanmahasiswa-150.png')}}" height="25" alt="" loading="lazy" />
         </a>
-        <!-- Search form -->
-        <form class="d-none d-md-flex input-group w-auto my-auto" method="GET" action="{{route('admin.berita.dashboard')}}">
-          <input autocomplete="off" type="search" class="form-control rounded"
-            placeholder='Search (ctrl + "/" to focus)' style="min-width: 225px" />
-          <span class="input-group-text border-0"><i class="fas fa-search"></i></span>
-        </form>
-
         <!-- Right links -->
         <ul class="navbar-nav ms-auto d-flex flex-row">
           <!-- Notification dropdown -->
