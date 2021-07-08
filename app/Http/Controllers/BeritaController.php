@@ -17,7 +17,6 @@ class BeritaController extends Controller
     {
         if($request->has('search')){
             $berita = Berita::where('judul', 'LIKE', '%'.$request->search. '%')->get();
-            $berita = Berita::where('isi', 'LIKE', '%'.$request->search. '%')->get();
         }else{
             $berita = Berita::limit(5)->orderBy('id', 'DESC')->get();
 
@@ -31,7 +30,6 @@ class BeritaController extends Controller
     {
         if($request->has('search')){
             $beritaRight = Berita::where('judul', 'LIKE', '%'.$request->search. '%')->get();
-            $beritaRight = Berita::where('isi', 'LIKE', '%'.$request->search. '%')->get();
         }else{
             $beritaRight = Berita::limit(5)->orderBy('id', 'DESC')->get();
 
@@ -82,27 +80,27 @@ class BeritaController extends Controller
         ));
     }
 
-    public function view($id)
+    // public function view($id)
+    // {
+    //     $topTrend = Trending::find($id);
+    //     $topTrendText = Trending::limit(3)->orderBy('id', 'DESC')->get();
+    //     $topNews = Trending::inRandomOrder()->limit(4)->orderBy('id', 'DESC')->get();
+    //     $beritaRight = Berita::limit(5)->orderBy('id', 'DESC')->get();
+
+    //     return view('fe-berita.view', compact( 
+    //         'topTrend', 
+    //         'beritaRight',
+    //         'topNews',
+    //         'topTrendText'
+
+    //     ));
+    // }
+    public function views($key)
     {
-        $topTrend = Trending::find($id);
+        $topTrend = Trending::where('key' ,$key)->first();
         $topTrendText = Trending::limit(3)->orderBy('id', 'DESC')->get();
         $topNews = Trending::inRandomOrder()->limit(4)->orderBy('id', 'DESC')->get();
-        $beritaRight = Berita::limit(5)->orderBy('id', 'DESC')->get();
-
-        return view('fe-berita.view', compact( 
-            'topTrend', 
-            'beritaRight',
-            'topNews',
-            'topTrendText'
-
-        ));
-    }
-    public function views($id)
-    {
-        $topTrend = Trending::find($id);
-        $topTrendText = Trending::limit(3)->orderBy('id', 'DESC')->get();
-        $topNews = Trending::inRandomOrder()->limit(4)->orderBy('id', 'DESC')->get();
-        $beritaRight = Berita::find($id);
+        $beritaRight = Berita::where('key' ,$key)->first();
         return view('fe-berita.views', compact( 
             'topTrend',
             'beritaRight',

@@ -1,4 +1,5 @@
 @extends('layouts.frontend.main')
+@section('title', 'Kategori berita terkini yang mengulas banyak berita')
 @section('content')
 <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
@@ -52,7 +53,7 @@
                                                 </div>
                                                 <div class="what-cap">
                                                     <span class="color1">{{$brt->kategori->nama_kategori}}</span>
-                                                    <h4><a href="{{route('berita.views',['id'=>$brt->id, 'judul'=>$brt->judul])}}">{{substr($brt->judul, 0, 50)}}...</a></h4>
+                                                    <h4><a href="{{route('berita.views',['key'=>$brt->key])}}">{{substr($brt->judul, 0, 50)}}...</a></h4>
                                                 </div>
                                             </div>
                                         </div>
@@ -76,7 +77,7 @@
                                                 </div>
                                                 <div class="what-cap">
                                                     <span class="color1">{{$brt->kategori->nama_kategori}}</span>
-                                                    <h4><a href="{{route('berita.views',['id'=>$brt->id, 'judul'=>$brt->judul])}}">{{substr($brt->judul, 0, 50)}}...</a></h4>
+                                                    <h4><a href="{{route('berita.views',['key'=>$brt->key])}}">{{substr($brt->judul, 0, 50)}}...</a></h4>
                                                 </div>
                                             </div>
                                         </div>

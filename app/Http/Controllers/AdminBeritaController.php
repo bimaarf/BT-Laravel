@@ -28,7 +28,7 @@ class AdminBeritaController extends Controller
         $request->cover_img->move(public_path('gambar'), $filename);
 
         $berita = new Berita();
-        $berita->key = Str::random(50);
+        $berita->key = Str::slug($request->judul, '-'); 
         $berita->judul = $request->judul;
         $berita->isi = $request->isi;
         $berita->cover_img = $filename;
@@ -38,19 +38,20 @@ class AdminBeritaController extends Controller
 
         return redirect()->route('admin.berita.dashboard');
     }
-    public function formUbah($id)
+    public function formUbah($key)
     {
 
         $kategori = Kategori::all();
-        $berita = Berita::find($id);
+        $berita = Berita::where('key' ,$key)->first();
 
 
         return view('admin.berita.form_ubah', compact('kategori', 'berita'));
     }
 
-    public function ubah(Request $request, $id)
+    public function ubah(Request $request, $key)
     {
-        $berita = Berita::find($id);
+        $berita = Berita::where('key' ,$key)->first();
+        $berita->key = Str::slug($request->judul, '-'); 
         $berita->judul = $request->judul;
         $berita->isi = $request->isi;
         $berita->kategori_id = $request->kategori_id;
@@ -69,20 +70,20 @@ class AdminBeritaController extends Controller
         if($berita->update())
         {
 
-            return redirect()->route('admin.berita.detail', ['id' => $berita->id, 'key' => $berita->key])->withSuccess('Update success!');
+            return redirect()->route('admin.berita.detail', ['key' => $berita->key])->withSuccess('Update success!');
         }
         else
         {
-            return redirect()->route('admin.berita.detail', ['id' => $berita->id, 'key' => $berita->key])->withDanger('Update Error');
+            return redirect()->route('admin.berita.detail', ['key' => $berita->key])->withDanger('Update Error');
             
         }
 
         
     }
 
-    public function detail($id)
+    public function detail($key)
     {
-        $berita = Berita::find($id);
+        $berita = Berita::where('key' ,$key)->first();
         return view('admin.berita.detail', compact('berita'));
     }
 

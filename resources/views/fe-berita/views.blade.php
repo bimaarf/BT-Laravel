@@ -39,6 +39,7 @@
                                 </div>
                                 <div class="section-tittle mb-30 pt-30">
                                     <h3>{{$beritaRight->judul}}</h3>
+                                    @section('title', $beritaRight->judul)
                                 </div>
                                 <div class="section-tittle trending-bottom single-bottom mb-35">
                                     <div class=" card-header border-0"><b>Baca Juga</b>
@@ -46,7 +47,7 @@
                                         <div class="trand-right-single d-flex mt-2">
                                             <ul>
                                             @foreach($topNews as $top)
-                                                <li><h6 class="text-danger"><a href="{{route('berita.view',['id'=>$top->id, 'judul'=>$top->berita->judul])}}">{{$top->berita->judul}}</a></h6></li>
+                                                <li><h6 class="text-danger"><a href="{{route('berita.views',['key'=>$top->berita->key])}}">{{$top->berita->judul}}</a></h6></li>
                                             @endforeach
                                             </ul>
                                         </div>

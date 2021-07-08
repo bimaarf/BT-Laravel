@@ -15,8 +15,8 @@ class CreateBeritaTable extends Migration
     {
         Schema::create('berita', function (Blueprint $table) {
             $table->id();
-            $table->string('key', 50)->unique();
-            $table->string('judul', 150);
+            $table->string('key', 255);
+            $table->string('judul', 255);
             $table->text('isi');
             $table->string('cover_img', 255);
             $table->unsignedBigInteger('kategori_id');

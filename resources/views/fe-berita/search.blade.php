@@ -1,4 +1,5 @@
 @extends('layouts.frontend.main')
+
 @section('content')
 <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
@@ -26,10 +27,11 @@
                             </div>
 
                             <div class="blog_details">
-                                <a class="d-inline-block" href="{{route('berita.views',['id'=>$brt->id, 'judul'=>$brt->judul])}}">
+                                <a class="d-inline-block" href="{{route('berita.views',['key'=>$brt->key])}}">
                                     <h2>{{$brt->judul}}</h2>
+                                    @section('title', $brt->judul)
                                 </a>
-                                <p>{{substr($brt->isi, 0, 150)}}... <a href="{{route('berita.views',['id'=>$brt->id, 'judul'=>$brt->judul])}}">Read more</a> </p>
+                                <p>{{substr($brt->isi, 0, 150)}}... <a href="{{route('berita.views',['key'=>$brt->key])}}">Read more</a> </p>
                                 <ul class="blog-info-link">
                                     <li><a href="https://instagram.com/bima_arifa"><i class="fa fa-user"></i>{{$brt->kategori->nama_kategori}}</a></li>
                                     <!-- <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li> -->
@@ -95,7 +97,7 @@
                             <div class="media post_item">
                                 <img src="{{asset('gambar/'. $brt->cover_img)}}" width="180" alt="post">
                                 <div class="media-body">
-                                    <a href="{{route('berita.views',['id'=>$brt->id, 'judul'=>$brt->judul])}}">
+                                    <a href="{{route('berita.views',['key'=>$brt->key])}}">
                                         <h3>{{substr($brt->judul, 0 , 30)}}...</h3>
                                     </a>
                                     <p>{{$brt->craeted_at}}</p>

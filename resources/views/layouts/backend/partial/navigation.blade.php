@@ -49,7 +49,6 @@
               <a href="{{route('admin.kontak.dashboard')}}" class="list-group-item list-group-item-action py-2 ripple @yield('dashboard.kontak')">
                     <i class="fas fa-chart-pie fa-fw me-3"></i>
                     </span>Daftar Kontak</span></a>
-
         </div>
       </div>
     </nav>

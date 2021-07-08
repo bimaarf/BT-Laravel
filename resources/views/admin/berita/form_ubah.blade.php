@@ -8,7 +8,7 @@
             </h5>
           </div>
           <div class="card-body">
-          <form method="POST" action="{{route('admin.berita.ubah',['id'=>$berita->id])}}" enctype="multipart/form-data" >
+          <form method="POST" action="{{route('admin.berita.ubah',['key'=>$berita->key])}}" enctype="multipart/form-data" >
                         @csrf
                         <div class="form-group">
                             <label for="judul" class="form-label">Judul Berita</label>

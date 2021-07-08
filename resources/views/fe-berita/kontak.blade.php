@@ -1,4 +1,5 @@
 @extends('layouts.frontend.main')
+@section('title', 'Layanan dan kontak kami Coretan Mahasiswa')
 @section('content')
 <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">

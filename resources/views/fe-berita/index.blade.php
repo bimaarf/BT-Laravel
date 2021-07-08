@@ -1,4 +1,5 @@
 @extends('layouts.frontend.main')
+@section('title', 'Coretan Mahasiswa | The Most Engaging Media for Millennials and Gen-Z')
 @section('content')
 <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
@@ -40,7 +41,7 @@
                                 <img src="{{asset('gambar/'.$top->berita->cover_img)}}" alt="">
                                 <div class="trend-top-cap">
                                     <span>{{$top->berita->kategori->nama_kategori}}</span>
-                                    <h2><a href="{{route('berita.view',['id'=>$top->id, 'judul'=>$top->berita->judul])}}">{{substr($top->berita->judul, 0, 50)}}...</a></h2>
+                                    <h2><a href="{{route('berita.views',['key'=>$top->berita->key])}}">{{substr($top->berita->judul, 0, 50)}}...</a></h2>
                                 </div>
                             </div>
                         </div>
@@ -56,7 +57,7 @@
                                     </div>
                                     <div class="trend-bottom-cap">
                                         <span class="color1">{{$brt->berita->kategori->nama_kategori}}</span>
-                                        <h4><a href="{{route('berita.view',['id'=>$brt->id, 'judul'=>$brt->berita->judul])}}">{{substr($brt->berita->judul, 0, 85)}}...</a></h4>
+                                        <h4><a href="{{route('berita.views',['key'=>$brt->berita->key])}}">{{substr($brt->berita->judul, 0, 85)}}...</a></h4>
                                     </div>
                                 </div>
                               </div>
@@ -89,7 +90,7 @@
                             </div>
                             <div class="trand-right-cap">
                                 <span class="color1">{{$brt->kategori->nama_kategori}}</span>
-                                <h4><a href="{{route('berita.views',['id'=>$brt->id, 'judul'=>$brt->judul])}}">{{substr($brt->judul, 0, 50)}}...</a></h4>
+                                <h4><a href="{{route('berita.views',['key'=>$brt->key])}}">{{substr($brt->judul, 0, 50)}}...</a></h4>
                             </div>
                         </div>
                     @endforeach
@@ -122,7 +123,7 @@
                                 <div class="weekly2-caption">
                                     <span class="color1">{{$brt->berita->kategori->nama_kategori}}</span>
                                     <p>{{$brt->berita->created_at}}</p>
-                                    <h4><a href="{{route('berita.view',['id'=>$brt->id, 'judul'=>$brt->berita->judul])}}">{{substr($brt->berita->judul, 0, 50)}}...</a></h4>
+                                    <h4><a href="{{route('berita.views',['key'=>$brt->berita->key])}}">{{substr($brt->berita->judul, 0, 50)}}...</a></h4>
                                 </div>
                             </div> 
                             @endforeach
@@ -175,7 +176,7 @@
                                                 </div>
                                                 <div class="what-cap">
                                                     <span class="color1">{{$brt->kategori->nama_kategori}}</span>
-                                                    <h4><a href="{{route('berita.views',['id'=>$brt->id, 'judul'=>$brt->judul])}}">{{substr($brt->judul, 0, 50)}}...</a></h4>
+                                                    <h4><a href="{{route('berita.views',['key'=>$brt->key])}}">{{substr($brt->judul, 0, 50)}}...</a></h4>
                                                 </div>
                                             </div>
                                         </div>
@@ -199,7 +200,7 @@
                                                 </div>
                                                 <div class="what-cap">
                                                     <span class="color1">{{$brt->kategori->nama_kategori}}</span>
-                                                    <h4><a href="{{route('berita.views',['id'=>$brt->id, 'judul'=>$brt->judul])}}">{{substr($brt->judul, 0, 50)}}...</a></h4>
+                                                    <h4><a href="{{route('berita.views',['key'=>$brt->key])}}">{{substr($brt->judul, 0, 50)}}...</a></h4>
                                                 </div>
                                             </div>
                                         </div>
@@ -275,7 +276,7 @@
                                 <div class="weekly2-caption">
                                     <span class="color1">{{$brt->berita->kategori->nama_kategori}}</span>
                                     <p>{{$brt->berita->created_at}}</p>
-                                    <h4><a href="{{route('berita.view',['id'=>$brt->id, 'judul'=>$brt->berita->judul])}}">{{substr($brt->berita->judul, 0, 50)}}...</a></h4>
+                                    <h4><a href="{{route('berita.views',['key'=>$brt->berita->key])}}">{{substr($brt->berita->judul, 0, 50)}}...</a></h4>
                                 </div>
                             </div> 
                             @endforeach
@@ -311,7 +312,7 @@
                                 </div>
                                 <div class="what-cap">
                                     <span class="color1">{{$brt->berita->kategori->nama_kategori}}</span>
-                                    <h4><a href="{{route('berita.view',['id'=>$brt->id, 'judul'=>$brt->berita->judul])}}">{{substr($brt->berita->judul, 0, 30)}}...</a></h4>
+                                    <h4><a href="{{route('berita.views',['key'=>$brt->berita->key])}}">{{substr($brt->berita->judul, 0, 30)}}...</a></h4>
                                 </div>
                             </div>
                         @endforeach

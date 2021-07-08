@@ -119,8 +119,8 @@
                     <td class="mb-0 fw-normal">{{$brt->user->name}}</td>
                     <td class="mb-0 fw-normal">{{$brt->updated_at}}</td>
                     <td class="mb-0 fw-normal">
-                    <a href="{{route('admin.berita.detail',['id'=>$brt->id, 'key'=>$brt->key])}}" class="btn btn-sm btn-info"><div class="bi icon dripicons-view-list"></div>Lihat</a>
-                    <a href="{{route('admin.berita.formUbah',['id'=>$brt->id, 'key'=>$brt->key])}}" class="btn btn-sm btn-warning"><div class="bi icon dripicons-pencil"></div>Edit</a>
+                    <a href="{{route('admin.berita.detail',['key'=>$brt->key])}}" class="btn btn-sm btn-info"><div class="bi icon dripicons-view-list"></div>Lihat</a>
+                    <a href="{{route('admin.berita.formUbah',['key'=>$brt->key])}}" class="btn btn-sm btn-warning"><div class="bi icon dripicons-pencil"></div>Edit</a>
                     <a href="{{route('admin.berita.hapus',['id'=>$brt->id])}}" class=" btn btn-sm btn-danger" data-toggle="tooltip"><div class="bi icon dripicons-trash"></div>Hapus</a>
                             
                     </td>

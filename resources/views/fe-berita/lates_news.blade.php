@@ -1,4 +1,5 @@
 @extends('layouts.frontend.main')
+@section('title', 'Breaking news Coretan Mahasiswa, berdasarkan berita harian terhangat sejak pagi. News selalu fokus pada berita populer terkini, mencakup banyak peristiwa.')
 @section('content')
     <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
@@ -52,7 +53,7 @@
                                         <div class="trand-right-single d-flex mt-2">
                                             <ul>
                                             @foreach($topNews as $brt)
-                                                <li><h6 class="text-danger"><a href="{{route('berita.view',['id'=>$top->id, 'judul'=>$top->berita->judul])}}">{{$brt->berita->judul}}</a></h6></li>
+                                                <li><h6 class="text-danger"><a href="{{route('berita.views',[ 'key'=>$top->berita->key])}}">{{$brt->berita->judul}}</a></h6></li>
                                             @endforeach
                                             </ul>
                                         </div>

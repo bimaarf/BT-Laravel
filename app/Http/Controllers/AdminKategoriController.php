@@ -18,7 +18,7 @@ class AdminKategoriController extends Controller
     public function tambah(Request $request)
     {
         $kategori = new Kategori();
-        $kategori->key = Str::random(50);
+        $kategori->key = Str::random(30);
         $kategori->nama_kategori = $request->nama_kategori;
         $kategori->deskripsi = $request->deskripsi;
         $kategori->save();

@@ -38,9 +38,9 @@ Route::get('/dashboard', [SiteController::class,'dashboard'])->name('dashboard')
 Route::get('/dashboard/berita', [AdminController::class,'indexBerita'])->name('admin.berita.dashboard')->middleware(['auth', 'role:admin|owner']);
 Route::get('/dashboard/berita/form-tambah', [AdminBeritaController::class, 'formTambah'])->name('admin.berita.formTambah')->middleware(['auth', 'role:admin|owner']);
 Route::post('/dashboard/berita/tambah', [AdminBeritaController::class, 'tambah'])->name('admin.berita.tambah')->middleware('auth');
-Route::get('/dashboard/berita/formubah/{id}{key}', [AdminBeritaController::class, 'formUbah'])->name('admin.berita.formUbah')->middleware(['auth', 'role:admin|owner']);
-Route::post('/dashboard/berita/ubah/{id}', [AdminBeritaController::class, 'ubah'])->name('admin.berita.ubah')->middleware('auth');
-Route::get('/dashboard/berita/view/{id}{key}', [AdminBeritaController::class, 'detail'])->name('admin.berita.detail')->middleware(['auth', 'role:admin|owner']);
+Route::get('/dashboard/berita/formubah/{key}', [AdminBeritaController::class, 'formUbah'])->name('admin.berita.formUbah')->middleware(['auth', 'role:admin|owner']);
+Route::post('/dashboard/berita/ubah/{key}', [AdminBeritaController::class, 'ubah'])->name('admin.berita.ubah')->middleware('auth');
+Route::get('/dashboard/berita/view/{key}', [AdminBeritaController::class, 'detail'])->name('admin.berita.detail')->middleware(['auth', 'role:admin|owner']);
 Route::get('/dashboard/berita/hapus/{id}', [AdminBeritaController::class, 'hapus'])->name('admin.berita.hapus')->middleware(['auth', 'role:owner']);
 
 // kategori
@@ -73,5 +73,5 @@ Route::get('/search', [BeritaController::class, 'search'])->name('fe-berita.sear
 Route::get('/category', [BeritaController::class, 'kategori'])->name('fe-berita.kategori');
 Route::get('/contact', [BeritaController::class, 'kontak'])->name('fe-berita.kontak');
 Route::get('/lates-news', [BeritaController::class, 'latesNews'])->name('fe-berita.latesNews');
-Route::get('/trend/{id}{judul}', [BeritaController::class, 'view'])->name('berita.view');
-Route::get('/view/{id}{judul}', [BeritaController::class, 'views'])->name('berita.views');
+// Route::get('/t/{key}', [BeritaController::class, 'view'])->name('berita.view');
+Route::get('/v/{key}', [BeritaController::class, 'views'])->name('berita.views');
