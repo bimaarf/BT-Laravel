@@ -1,6 +1,6 @@
 @extends('layouts.backend.main')
-@section('content')
 @section('berita.dashboard', 'active')
+@section('content')
     <section class="mb-4">
     <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
       <!-- Container wrapper -->

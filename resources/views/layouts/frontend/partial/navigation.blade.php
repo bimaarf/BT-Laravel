@@ -7,10 +7,19 @@
                        <div class="col-xl-12">
                             <div class="row d-flex justify-content-between align-items-center">
                                 <div class="header-info-left">
+                                    <form method="POST" action="{{ route('logout') }}">
+                    @csrf
                                     <ul>     
-                                        <li><a href="{{route('login')}}"><i class="fa fa-user"> </i> Login</a> </li>
-                                        <li><a href="{{route('register')}}"><i class="fa fa-user"> </i> Register</a> </li>
+                                        <li><a href="{{route('login')}}"><i class="fa fa-user"> </i> Admin</a> </li>
+                                        @if(Auth::user())
+                                         <li><a href="{{route('login')}}" onclick="event.preventDefault();
+                                        this.closest('form').submit();"><i class="fa fa-user"> </i>  {{ __('Logout') }}</a> </li>
+                                         @endif
+                                       
                                     </ul>
+
+                    
+                </form>
                                 </div>
                                 <div class="header-info-right">
                                     <ul class="header-social">    

@@ -8,10 +8,12 @@ use App\Http\Controllers\SiteController;
 use App\Http\Controllers\AdminBeritaController;
 use App\Http\Controllers\AdminKategoriController;
 use App\Http\Controllers\KontakController;
+use App\Http\Controllers\BeritaPendingController;
 use App\Models\Berita;
 use App\Models\Kategori;
 use App\Models\Trending;
 use App\Models\Kontak;
+use App\Models\BeritaPending;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,9 +34,19 @@ use App\Models\Kontak;
 // })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+// berita pending
+Route::post('/dashboard/pending/tambah', [BeritaPendingController::class, 'tambah'])->name('admin.pending.tambah')->middleware('auth');
+Route::get('/dashboard/pending', [AdminController::class,'indexPending'])->name('admin.pending.dashboard')->middleware(['auth', 'role:admin|owner']);
+Route::post('/dashboard/pending/tambah', [BeritaPendingController::class, 'tambah'])->name('admin.pending.tambah')->middleware('auth');
+Route::get('/dashboard/pending/view/{key}', [BeritaPendingController::class, 'detail'])->name('admin.pending.detail')->middleware(['auth', 'role:admin|owner']);
+Route::get('/dashboard/pending/formubah/{key}', [BeritaPendingController::class, 'formUbah'])->name('admin.pending.formUbah')->middleware(['auth', 'role:admin|owner']);
+Route::post('/dashboard/pending/ubah/{key}', [BeritaPendingController::class, 'ubah'])->name('admin.pending.ubah')->middleware('auth');
+Route::get('/dashboard/pending/hapus/{id}', [BeritaPendingController::class, 'hapus'])->name('admin.pending.hapus')->middleware(['auth', 'role:owner']);
+Route::get('/dashboard/pending/publish', [BeritaPendingController::class,'publish'])->name('admin.pending.publish')->middleware(['auth', 'role:admin|owner']);
+
 
 // berita
-Route::get('/dashboard', [SiteController::class,'dashboard'])->name('dashboard')->middleware(['auth', 'role:user|admin|owner']);
+Route::get('/dashboard', [SiteController::class,'dashboard'])->name('dashboard')->middleware('auth');
 Route::get('/dashboard/berita', [AdminController::class,'indexBerita'])->name('admin.berita.dashboard')->middleware(['auth', 'role:admin|owner']);
 Route::get('/dashboard/berita/form-tambah', [AdminBeritaController::class, 'formTambah'])->name('admin.berita.formTambah')->middleware(['auth', 'role:admin|owner']);
 Route::post('/dashboard/berita/tambah', [AdminBeritaController::class, 'tambah'])->name('admin.berita.tambah')->middleware('auth');

@@ -24,7 +24,7 @@
                     @foreach($trending as $trd)
                   <tr>
                     <td class="mb-0 fw-normal">{{$loop->iteration}}</td>
-                    <td class="mb-0 fw-normal">{{$trd->berita->judul}}</td>
+                    <td class="mb-0 fw-normal">{{substr($trd->berita->judul, 0 , 30)}}</td>
                     <td class="mb-0 fw-normal">{{$trd->berita->kategori->nama_kategori}}</td>
                     <td class="mb-0 fw-normal">{{$trd->updated_at}}</td>
                     <td class="mb-0 fw-normal">

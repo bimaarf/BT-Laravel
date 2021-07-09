@@ -9,6 +9,10 @@
           </a>
           <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
               class="fas fa-user fa-fw me-3"></i><span>Profil</span></a>
+            @if(Auth::user()->hasRole('owner|admin'))
+              <a href="{{route('admin.pending.dashboard')}}" class="list-group-item list-group-item-action py-2 ripple @yield('pending.dashboard')"><i
+              class="fas fa-server fa-fw me-3"></i>
+              <span>Draft Berita</span></a>
 
 
               <span class="sidebar-title list-group-item list-group-item-action py-2 ripple">Form &amp; Berita</span>
@@ -17,11 +21,13 @@
                   <i class="fas fa-globe fa-fw me-3"></i>
 
                   <span>Daftar Berita</span></a>
+
+                  
+
                   <a href="{{route('admin.berita.formTambah')}}" class="list-group-item list-group-item-action py-2 ripple @yield('berita.formTambah')">
                   <i class="fas fa-chart-line fa-fw me-3"></i>
                       <span>Tambah Berita</span></a>
                       
-
 
               <span class="sidebar-title list-group-item list-group-item-action py-2 ripple">Form &amp; Kategori</span>
           
@@ -49,6 +55,7 @@
               <a href="{{route('admin.kontak.dashboard')}}" class="list-group-item list-group-item-action py-2 ripple @yield('dashboard.kontak')">
                     <i class="fas fa-chart-pie fa-fw me-3"></i>
                     </span>Daftar Kontak</span></a>
+            @endif
         </div>
       </div>
     </nav>

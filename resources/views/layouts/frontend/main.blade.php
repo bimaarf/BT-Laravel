@@ -1,6 +1,12 @@
 <!doctype html>
 <html class="no-js" lang="zxx">
     <head>
+    <meta name="keywords" content="coretanmahasiswa,coretan mahasiswa,CoretanMahasiswa,Coretan Mahasiswa">
+    <meta name="description" content="@yield('title')">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="alternate" type="application/rss+xml" title="@yield('title') &raquo; Feed" href="https://coretanmahasiswa.com/" />
+    <link rel="alternate" type="application/rss+xml" title="@yield('title') &raquo; Umpan Komentar" href="https://coretanmahasiswa.com/contact" />
+    	
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>@yield('title')</title>

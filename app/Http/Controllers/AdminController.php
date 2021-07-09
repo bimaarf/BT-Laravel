@@ -10,9 +10,21 @@ use App\Models\Kategori;
 use App\Models\Trending;
 use App\Models\Kontak;
 use App\Models\User;
+use App\Models\BeritaPending;
 
 class AdminController extends Controller
 {
+    public function indexPending(Request $request)
+    {
+        if($request->has('search')){
+            $berita_pending = BeritaPending::where('judul', 'LIKE', '%'.$request->search. '%')->simplePaginate(10);
+            $berita_pending = BeritaPending::where('isi', 'LIKE', '%'.$request->search. '%')->simplePaginate(10);
+        }else{
+            $berita_pending = BeritaPending::orderBy('id', 'DESC')->simplePaginate(10);
+        }
+        return view('admin.pending.dashboard', compact('berita_pending'));
+    }
+
     public function indexBerita(Request $request)
     {
         if($request->has('search')){

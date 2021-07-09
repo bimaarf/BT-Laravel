@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
 use App\Models\Berita;
@@ -17,11 +18,12 @@ class SiteController extends Controller
     }
     public function dashboard()
     {
+        $kategori = Kategori::all();
         $totalBerita = Berita::count();
         $totalKategori = Kategori::count();
         $totalUser = User::count();
         $totalKontak = Kontak::count();
         $totalTrend = Trending::count();
-        return view('dashboard',compact('totalBerita', 'totalKategori', 'totalUser', 'totalKontak', 'totalTrend')); //lokasi file resource/view/beranda.php
+        return view('dashboard',compact('kategori', 'totalBerita', 'totalKategori', 'totalUser', 'totalKontak', 'totalTrend')); //lokasi file resource/view/beranda.php
     }
 }

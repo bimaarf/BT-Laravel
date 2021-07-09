@@ -34,4 +34,5 @@ class Berita extends Model
     {
         return $this->belongsTo(Trending::class);
     }
+
 }
