@@ -34,15 +34,17 @@ class BeritaController extends Controller
             $beritaRight = Berita::limit(5)->orderBy('id', 'DESC')->get();
 
         }
+        $berita = Berita::orderBy('id', 'DESC')->get();
         $whatNews = Berita::orderBy('id', 'DESC')->simplePaginate(4);
         $kategori = Kategori::orderBy('id', 'DESC')->get();
         $topTrendText = Trending::limit(3)->orderBy('id', 'DESC')->get();
         $topTrend = Trending::limit(1)->orderBy('id', 'DESC')->get();
-        $botTrend = Trending::limit(3)->orderBy('id', 'DESC')->get();
+        $botTrend = Trending::inRandomOrder()->limit(3)->orderBy('id', 'DESC')->get();
         $topNews = Trending::inRandomOrder()->limit(5)->orderBy('id', 'DESC')->get();
         
         return view('fe-berita.index', 
         compact(
+            'berita',
             'whatNews',
             'kategori',
             'topTrend', 
@@ -56,7 +58,7 @@ class BeritaController extends Controller
     public function kategori()
     {
         $kategori = Kategori::orderBy('id', 'DESC')->get();
-        $whatNews = Berita::orderBy('id', 'DESC')->cursorPaginate(3);
+        $whatNews = Berita::orderBy('id', 'DESC')->get();
 
         return view('fe-berita.kategori', compact('kategori', 'whatNews'));
     }
@@ -97,11 +99,15 @@ class BeritaController extends Controller
     // }
     public function views($key)
     {
+        $kategori = Kategori::orderBy('id', 'DESC')->get();
+        $berita = Berita::limit(4)->orderBy('id', 'DESC')->get();
         $topTrend = Trending::where('key' ,$key)->first();
         $topTrendText = Trending::limit(3)->orderBy('id', 'DESC')->get();
         $topNews = Trending::inRandomOrder()->limit(4)->orderBy('id', 'DESC')->get();
         $beritaRight = Berita::where('key' ,$key)->first();
         return view('fe-berita.views', compact( 
+            'kategori',
+            'berita',
             'topTrend',
             'beritaRight',
             'topNews',

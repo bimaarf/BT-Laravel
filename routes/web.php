@@ -74,7 +74,7 @@ Route::get('/dashboard/trending/hapus/{id}', [TrendingController::class, 'hapus'
 
 // Kontak
 Route::get('/dashboard/kontak', [AdminController::class, 'indexKontak'])->name('admin.kontak.dashboard')->middleware(['auth', 'role:admin|owner']);
-Route::post('/kontak/tambah', [KontakController::class, 'tambah'])->name('kontak.tambah')->middleware(['auth', 'role:admin|owner']);
+Route::post('/kontak/tambah', [KontakController::class, 'tambah'])->name('kontak.tambah');
 Route::get('/dashboard/kontak/view/{id}', [KontakController::class, 'detail'])->name('admin.kontak.detail')->middleware(['auth', 'role:admin|owner']);
 Route::get('/kontak/hapus/{id}', [KontakController::class, 'hapus'])->name('admin.kontak.hapus')->middleware(['auth', 'role:admin|owner']);
 

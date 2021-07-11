@@ -1,5 +1,6 @@
 @extends('layouts.frontend.main')
 @section('title', 'Kategori berita terkini yang mengulas banyak berita')
+@section('isi', 'Coretan Mahasiswa | The Most Engaging Media for Millennials and Gen-Z')
 @section('content')
 <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">

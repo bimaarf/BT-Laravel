@@ -1,5 +1,6 @@
 @extends('layouts.frontend.main')
 @section('title', 'Coretan Mahasiswa | The Most Engaging Media for Millennials and Gen-Z')
+@section('isi', 'Situs berita dengan sajian berita terkini, hingga informasi secara global dan menarik untuk dibaca')
 @section('content')
 <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
@@ -52,8 +53,8 @@
                               @foreach($botTrend as $brt)
                               <div class="col-lg-4">
                                 <div class="single-bottom mb-35">
-                                    <div class="trend-bottom-img mb-30 rounded thumb-post">
-                                        <img src="{{asset('gambar/'.$brt->berita->cover_img)}}" width="170" height="120" alt="">
+                                    <div class="trend-bottom-img mb-30 rounded ">
+                                        <img src="{{asset('gambar/'.$brt->berita->cover_img)}}"  alt="">
                                     </div>
                                     <div class="trend-bottom-cap">
                                         <span class="color1">{{$brt->berita->kategori->nama_kategori}}</span>
@@ -85,7 +86,7 @@
                     </div>
                     @foreach($beritaRight as $brt)
                         <div class="trand-right-single d-flex">
-                            <div class="trand-right-img rounded thumb-post">
+                            <div class="trand-right-img rounded ">
                                 <img src="{{asset('gambar/'.$brt->cover_img)}}" width="150" height="100"  alt="right" >
                             </div>
                             <div class="trand-right-cap">
@@ -123,7 +124,7 @@
                                 <div class="weekly2-caption">
                                     <span class="color1">{{$brt->berita->kategori->nama_kategori}}</span>
                                     <p>{{$brt->berita->created_at}}</p>
-                                    <h4><a href="{{route('berita.views',['key'=>$brt->berita->key])}}">{{substr($brt->berita->judul, 0, 50)}}...</a></h4>
+                                    <h4><a href="{{route('berita.views',['key'=>$brt->berita->key])}}">{{substr($brt->berita->judul, 0, 60)}}...</a></h4>
                                 </div>
                             </div> 
                             @endforeach
@@ -191,7 +192,7 @@
                             <div class="tab-pane fade" id="{{$ktg->nama_kategori}}" role="tabpanel" aria-labelledby="{{$ktg->nama_kategori}}-tab">
                                 <div class="whats-news-caption">
                                     <div class="row">
-                                        @foreach($whatNews as $brt)
+                                        @foreach($berita as $brt)
                                                 @if($brt->kategori->nama_kategori == $ktg->nama_kategori)
                                         <div class="col-lg-6 col-md-6">
                                             <div class="single-what-news mb-100">
@@ -276,7 +277,7 @@
                                 <div class="weekly2-caption">
                                     <span class="color1">{{$brt->berita->kategori->nama_kategori}}</span>
                                     <p>{{$brt->berita->created_at}}</p>
-                                    <h4><a href="{{route('berita.views',['key'=>$brt->berita->key])}}">{{substr($brt->berita->judul, 0, 50)}}...</a></h4>
+                                    <h4><a href="{{route('berita.views',['key'=>$brt->berita->key])}}">{{substr($brt->berita->judul, 0, 60)}}...</a></h4>
                                 </div>
                             </div> 
                             @endforeach
@@ -312,7 +313,7 @@
                                 </div>
                                 <div class="what-cap">
                                     <span class="color1">{{$brt->berita->kategori->nama_kategori}}</span>
-                                    <h4><a href="{{route('berita.views',['key'=>$brt->berita->key])}}">{{substr($brt->berita->judul, 0, 30)}}...</a></h4>
+                                    <h4><a href="{{route('berita.views',['key'=>$brt->berita->key])}}">{{$brt->berita->judul}}...</a></h4>
                                 </div>
                             </div>
                         @endforeach

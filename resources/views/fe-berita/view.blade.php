@@ -1,6 +1,6 @@
 @extends('layouts.frontend.main')
 @section('content')
-<div id="preloader-active">
+    <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
             <div class="preloader-inner position-relative">
                 <div class="preloader-circle"></div>
@@ -11,7 +11,7 @@
         </div>
     </div>
     <!-- load -->
-<div class="about-area">
+        <div class="about-area">
             <div class="container">
                     <!-- Hot Aimated News Tittle-->
                     <div class="row">
@@ -35,11 +35,12 @@
                             <!-- Trending Tittle -->
                             <div class="about-right mb-90">
                                 <div class="about-img">
-                                    <img src="{{asset('gambar/'.$topTrend->berita->cover_img)}}" alt="">
+                                    <img src="{{asset('gambar/'.$beritaRight->cover_img)}}" alt="">
                                 </div>
                                 <div class="section-tittle mb-30 pt-30">
-                                    <h3>{{$topTrend->berita->judul}}</h3>
-                                    @section('title', $topTrend->berita->judul)
+                                    <h3>{{$beritaRight->judul}}</h3>
+                                    @section('title', $beritaRight->judul)
+                                    @section('isi', $beritaRight->isi)
                                 </div>
                                 <div class="section-tittle trending-bottom single-bottom mb-35">
                                     <div class=" card-header border-0"><b>Baca Juga</b>
@@ -47,21 +48,21 @@
                                         <div class="trand-right-single d-flex mt-2">
                                             <ul>
                                             @foreach($topNews as $top)
-                                                <li><h6 class="text-danger"><a href="{{route('berita.view',['key'=>$top->berita->key])}}">{{$top->berita->judul}}</a></h6></li>
+                                                <li><h6 class="text-danger"><a href="{{route('berita.views',['key'=>$top->berita->key])}}">{{$top->berita->judul}}</a></h6></li>
                                             @endforeach
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="about-prea">
-                                    <p class="about-pera1 mb-25 tx-w-space"><b>LOCALZONE.ID - </b> {{$topTrend->berita->isi}}</p>
+                                    <p class="about-pera1 mb-25 tx-w-space"><b>CORETANMAHASISWA.COM - </b> {{$beritaRight->isi}}</p>
                                 </div> 
                                 
                                 <div class="about-prea">
-                                    <pre class="about-pera1 mb-25"></pre>
+                                    <p class="about-pera1 mb-25"></p>
                                 </div>
                             </div>
-                            <!-- From -->
+                            
                         </div>
                         <div class="col-lg-4">
                             <!-- Section Tittle -->

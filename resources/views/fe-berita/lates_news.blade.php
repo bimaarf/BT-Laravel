@@ -1,5 +1,4 @@
 @extends('layouts.frontend.main')
-@section('title', 'Breaking news Coretan Mahasiswa, berdasarkan berita harian terhangat sejak pagi. News selalu fokus pada berita populer terkini, mencakup banyak peristiwa.')
 @section('content')
     <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
@@ -23,6 +22,9 @@
                                     <ul id="js-news" class="js-hidden">
                                     @foreach($topTrendText as $topText)
                                     <li class="news-item">{{substr($topText->berita->judul, 0 , 50)}}...</li>
+                                            @section('title', $topText->berita->judul, 0 , 50)
+                                            @section('isi', $topText->berita->isi)
+
                                      @endforeach
                                     </ul>
                                 </div>

@@ -1,6 +1,7 @@
 @extends('layouts.backend.main')
 @section('dashboard', 'active')
 @section('content')
+@if(Auth::user()->hasRole('owner|admin'))
     <section class="mb-4">
         <div class="card">
           <div class="card-header text-center py-3">
@@ -108,6 +109,7 @@
           </div>
         </div>
     </section>
+    @endif
     <section class="mb-4">
         <div class="card">
           <div class="card-header text-center py-3">
