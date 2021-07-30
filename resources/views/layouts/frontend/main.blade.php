@@ -1,20 +1,24 @@
 <!doctype html>
 <html class="no-js" lang="zxx">
     <head>
-    <meta name="keywords" content="coretanmahasiswa,coretan mahasiswa,CoretanMahasiswa,Coretan Mahasiswa">
+    <link href="{{asset('frontend/assets/img/logo/CM-150.png')}}" rel="shortcut icon">
+    <meta name="keywords" content="coretanmahasiswa,coretan mahasiswa,CoretanMahasiswa,Coretan Mahasiswa,artikel,blog,berita,mahasiswa,coretan">
     <meta name="description" content="@yield('isi')">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='dns-prefetch' href='//fonts.googleapis.com' />
+    <link rel='dns-prefetch' href='//s.w.org' />
     <link rel="alternate" type="application/rss+xml" title="@yield('title') &raquo; Feed" href="https://coretanmahasiswa.com/" />
     <link rel="alternate" type="application/rss+xml" title="@yield('title') &raquo; Umpan Komentar" href="https://coretanmahasiswa.com/contact" />
     	
         <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>@yield('title')</title>
-        <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="manifest" href="site.webmanifest">
         <link rel="icon" href="{{asset('frontend/assets/img/logo/CM-150.png')}}" type="image/x-icon">
-
+        <link rel="icon" href="{{asset('frontend/assets/img/logo/CM-150.png')}}" sizes="32x32" />
+        <link rel="icon" href="{{asset('frontend/assets/img/logo/CM-150.png')}}" sizes="192x192" />
+        <link rel="apple-touch-icon-precomposed" href="{{asset('frontend/assets/img/logo/CM-150.png')}}">
+        <meta name="msapplication-TileImage" content="{{asset('frontend/assets/img/logo/CM-150.png')}}">
 
 		<!-- CSS here -->
             <link rel="stylesheet" href="{{asset('frontend/assets/css/bootstrap.min.css')}}">
@@ -43,6 +47,10 @@
                     word-wrap: break-word;       /* Internet Explorer 5.5+ */
                     }
             </style>
+            
+            <!--google ads-->
+            <script data-ad-client="ca-pub-2559852980754958" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            
    </head>
 
    <body>
@@ -60,6 +68,16 @@
     </div> -->
     <!-- Preloader Start -->
 
+        <div id="preloader-active">
+            <div class="preloader d-flex align-items-center justify-content-center">
+                <div class="preloader-inner position-relative">
+                    <div class="preloader-circle"></div>
+                    <div class="preloader-img pere-text">
+                        <img src="{{asset('frontend/assets/img/logo/CM-150.png')}}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
     @include('layouts.frontend.partial.navigation')
 
     <main>

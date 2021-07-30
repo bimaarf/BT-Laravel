@@ -2,16 +2,6 @@
 @section('title', 'Kategori berita terkini yang mengulas banyak berita')
 @section('isi', 'Coretan Mahasiswa | The Most Engaging Media for Millennials and Gen-Z')
 @section('content')
-<div id="preloader-active">
-        <div class="preloader d-flex align-items-center justify-content-center">
-            <div class="preloader-inner position-relative">
-                <div class="preloader-circle"></div>
-                <div class="preloader-img pere-text">
-                    <img src="{{asset('frontend/assets/img/logo/cm-150.png')}}" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
     <!-- load -->
 <section class="whats-news-area pt-50 pb-20">
     <div class="container">

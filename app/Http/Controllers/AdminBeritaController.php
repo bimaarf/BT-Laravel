@@ -56,7 +56,7 @@ class AdminBeritaController extends Controller
         $berita->isi = $request->isi;
         $berita->kategori_id = $request->kategori_id;
         $berita->user_id = Auth::id();
-        if($request->hasFile('image')) {
+        if($request->hasFile('cover_img')) {
             
             $cover_img = $request->file('cover_img');
             $filename = time().'-'.$cover_img->getClientOriginalName() ;

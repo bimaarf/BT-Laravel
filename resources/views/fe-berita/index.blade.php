@@ -1,17 +1,7 @@
 @extends('layouts.frontend.main')
 @section('title', 'Coretan Mahasiswa | The Most Engaging Media for Millennials and Gen-Z')
-@section('isi', 'Situs berita dengan sajian berita terkini, hingga informasi secara global dan menarik untuk dibaca')
+@section('isi', 'Coretan Mahasiswa adalah Situs berita dengan sajian berita terkini, hingga informasi secara global yang dibungkus sangat menarik untuk dibaca')
 @section('content')
-<div id="preloader-active">
-        <div class="preloader d-flex align-items-center justify-content-center">
-            <div class="preloader-inner position-relative">
-                <div class="preloader-circle"></div>
-                <div class="preloader-img pere-text">
-                    <img src="{{asset('frontend/assets/img/logo/cm-150.png')}}" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
     <!-- load -->
     <div class="trending-area fix">
         <div class="container">
